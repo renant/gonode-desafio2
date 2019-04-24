@@ -26,7 +26,9 @@ class App {
     nunjunks.configure(path.resolve(__dirname, 'app', 'views'))
   }
 
-  routes () {}
+  routes () {
+    this.express.use(require('./routes'))
+  }
 }
 
 module.exports = new App().express

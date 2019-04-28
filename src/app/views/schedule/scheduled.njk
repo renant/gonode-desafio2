@@ -1,0 +1,14 @@
+{% if appointments.length === 0 %}
+  <p>Não existem agendamentos para esse dia...</p>
+{% endif %}
+
+{% for appointment in appointments %}
+  <li class="provider">
+    <div>
+      <img src="/files/{{ appointment.user.avatar }}"/>
+      <strong>{{ appointment.user.name }}
+        <br>
+        {{ appointment.hour}}</strong>
+    </div>
+  </li>
+{% endfor %}

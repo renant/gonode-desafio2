@@ -4,7 +4,15 @@
   <div class="content">
     <strong>Olá,
       {{user.name}}</strong>
-    <p>Inicie um agendamento escolhendo um profissional abaixo:</p>
+    {% if (user.provider === false) %}
+      <p>Inicie um agendamento escolhendo um profissional abaixo:</p>
+    {% endif %}
+
+    {% if (user.provider === true) %}
+      <p>
+        <a href="/app/schedule">Veja seus agendamentos aqui</a>
+        ou inicie um agendamento escolhendo um profissional abaixo:</p>
+    {% endif %}
 
     <ul class="providers">
       {% for provider in providers %}
